@@ -1,102 +1,100 @@
 #include<stdio.h>
 #include<string.h>
-struct books{
-    int bookId;
-    char bookName[100];
-    char authorName[100];
-    char date[12];
-};
-struct student{
-    int id;
-    char stuName[50];
-    char stuClass[50];
-    int stuRoll;
-    char bookName[100];
-    char date[12];
+struct Book
+{
+  char author[50], title[50];
+  int code;
 };
 FILE *library;
-struct books addlist[100];
-void issueBook(int bookCount)
+int maxbook = 10;
+void addbook (struct Book books[], int *count);
+void displaybook (struct Book books[], int count);
+void issuebook (struct Book books[], int count);
+void returnbook (struct Book books[], int count);
+int
+main ()
 {
-struct books issue[100];
-int i=0,max_Books=4;
-for(i=0;i<bookCount;i++)
-{
-    while(bookCount<max_Books)
+  struct Book books[10];
+  int choice, count = 0;
+  //displaying choice
+  do
     {
-        printf("\nEnter Book Details:\n");
-        printf("Book ID:");
-        scanf("%d",&issue[i].bookId);
-        printf("Book Name:");
-        scanf("%s",issue[i].bookName);
-        printf("Author Name:");
-        scanf("%s",issue[i].authorName);
-        bookCount++;
-        printf("Book Issued Successfully \n");
+      printf ("\n===Library Management System===\n");
+      printf ("1. Add Book\n");
+      printf ("2. Display Books\n");
+      printf ("3. Search Book\n");
+      printf ("4. Issue Book\n");
+      printf ("5. Return Book\n");
+      printf ("6. Exit\n");
+      printf ("Enter your choice: ");
+      scanf ("%d", &choice);
+      printf("\n");
+      switch (choice)
+	{
+	case 1:
+	  addbook (books, &count);
+	  break;
+	case 2:
+	  displaybook (books, count);
+	  break;
+	case 6:
+	printf("Exiting the program");
+	break;
+
+	default:
+	  printf ("Invalid choice.Enter a correct choice.");
+	}
     }
-}
-}
- void AddBook()
- {
-            library=fopen("library.txt","a+");
-            int n,i=0;
-            printf("Enter Number Of Books Do You Want To Add");
-            scanf("%d",&n);
-    for(i=0;i<n;i++)
-        {
-        printf("\nEnter Book Details:\n\t");
-        printf("Book ID:");
-        scanf("%d",&addlist[i].bookId);
-        printf("Book Name:");
-        scanf("%s",addlist[i].bookName);
-        printf("Author Name:");
-        scanf("%s",addlist[i].authorName);
-        fprintf(library,"%d\t%s\t%s\n",addlist[i].bookId,addlist[i].bookName,addlist[i].authorName);
-        printf("Book Added Successfully \n");
-         }
-         fclose(library);
- }
-void main(){
-    int ch,no;
-        printf("====Library Management System Menu====\n");
-        printf("1 : Add Book\n");
-        printf("2 : Books List\n");
-        printf("3 : Issue Book\n");
-        printf("4 : Return Book\n");
-        printf("0 :Exit\n");
-        printf("Enter your choice... ");
-        scanf("%d",&ch);
-switch(ch)
-        {
-            case 1:
-             printf("Add Book");
-             AddBook();
-            break;
-            
-            case 2:
-            printf("Books List");
-            break;
-            
-            case 3:
-            printf("Issue Book");
-            printf("how many books do you want to issue");
-            scanf("%d",&no);
-            issueBook(no);
-            break;
-            
-            case 4:
-            printf("Return Book");
-            break;
-            
-            case 5:
-            printf("IssueList");
-            break;
-            
-            default:
-            printf("Invalid Choice...\n\n");
-            printf("PRESS Valid Key To Continue..");
-        }
-       
-       
+  while (choice != 6);
+  return 0;
 }
 
+//to ADD BOOKS
+void
+addbook (struct Book books[], int *count)
+{
+  library = fopen ("Library.txt", "w+");
+  int i, no;
+  printf ("Enter the number of books you need to add: ");
+  scanf ("%d", &no);
+  for (i = 0; i < no; i++)
+    {
+      if (*count < maxbook)
+	{
+	  printf ("Enter the name of book %d: ", i + 1);
+	  scanf (" %[^\n]", books[i].title);
+	  printf ("Enter the name of the author: ");
+	  scanf (" %[^\n]", books[i].author);
+	  printf ("Enter the book code: ");
+	  scanf ("%d", &books[i].code);
+	  fprintf (library,"%s\t\t\t\t%s\t\t\t%d\n",books[i].title,books[i].author,books[i].code);
+	  (*count)++;
+	  printf ("Book added successfully!\n");
+	}
+      else
+	{
+	  printf
+	    ("Maximum number of books reached. Cannot add more books.\n");
+	}
+    }
+    fclose(library);
+}
+//to DISPLAY ALL BOOKS
+void displaybook (struct Book books[], int count)
+{
+  library = fopen ("Library.txt", "r");
+  char ch;
+  printf("Books available in the library:\n");
+  printf("**********************************************************************");
+  printf("TILE\t\t\t\t\tAUTHOR\t\t\t\tCODE\n");
+  while (feof (library) == 0)
+    {
+      ch = fgetc (library);
+      printf ("%c", ch);
+    }
+    fclose(library);
+}
+/*void issuebook (struct Book books[], int count)
+{
+    
+}*/
