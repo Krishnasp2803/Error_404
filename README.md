@@ -49,7 +49,7 @@ main ()
   return 0;
 }
 
-//to ADD BOOKS
+//to Add books
 void
 addbook (struct Book books[], int *count)
 {
