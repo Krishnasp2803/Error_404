@@ -213,8 +213,6 @@ int main()
 
 
 
-
-
 void MainMenu()
 {
     printf("\n\n======CLASS 12======");
@@ -242,4 +240,6 @@ int user_choice()
             printf("\nPlease Enter Valid Choice\n");
         }
     }
+    while(1);
+    return choice;
 }
