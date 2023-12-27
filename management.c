@@ -11,7 +11,64 @@ struct Students{
 };
 int user_choice();
 void MainMenu();
+int main()
+{
+    struct Students students[50];
+    int count = 0;
+    int choice;
+    while(1)
+    {
+        MainMenu();
+        choice = user_choice();
+        if(choice==0)
+        {
+            printf("\nThank You");
+            break;
+        }
+        else if(choice==1)
+        {
+            printf("\n\n======Student Insertion Menu======\n");
+            do{
+                printf("Enter Student ID :");
+                scanf("%d",&students[count].id);
+                int ctr = 0;
+                for(int i=0;i<count;i++)
+                {
+                    if(students[count].id==students[i].id)
+                    {
+                        ctr = 2;
+                        break;
+                    }
+                }
+                if(ctr==0)
+                {
+                    break;
+                }
+                else
+                {
+                    printf("ID Already Exists. Please Enter Different ID :\n");
+                }
+            }
+            while(1);
+            printf("Enter Student Name :");
+            scanf(" %[^\n]",students[count].name);
+            printf("Enter Student Gender :");
+            scanf("%s",students[count].gender);
+            printf("Enter Student Age :");
+            scanf("%d",students[count].age);
+            printf("Enter mark (on 100) for Maths,Physics and Chemistry :");
+            scanf("%f%f%f",students[count].mark1,students[count].mark2,students[count].mark3);
+            students[count].percent = (students[count].mark1+students[count].mark12students[count].mark3)/3;
+            students[count].gpa = students[count].percent/9.5;
 
+            printf("\nStudent INfo Added Successfully!");
+            printf("\nID          :%d",students[count].id");
+            
+        
+
+        }
+    }
+}
 
 
 
