@@ -59,14 +59,20 @@ int main()
             printf("Enter mark (on 100) for Maths,Physics and Chemistry :");
             scanf("%f%f%f",students[count].mark1,students[count].mark2,students[count].mark3);
             students[count].percent = (students[count].mark1+students[count].mark12students[count].mark3)/3;
-            students[count].gpa = students[count].percent/9.5;
+            students[count].cgpa = students[count].percent/9.5;
 
             printf("\nStudent INfo Added Successfully!");
-            printf("\nID          :%d",students[count].id");
-            
-        
-
+            printf("\nID           :%d",students[count].id);
+            printf("\nName         :%d",students[count].name);
+            printf("\nGender       :%d",students[count].gender);
+            printf("\nAge          :%d",students[count].age);
+            printf("\n\nMarks\n");
+            printf("\nMaths\t\t\tPhysics\t\t\tChemistry\t\tPercentage\t\tCGPA\n");
+            printf("%f\t\t%f\t\t%f\t\t%f\t\t%f\n",students[count].m1,students[count].m2,students[count].m3,students[count].percent,students[count].cgpa);
+            count++;
         }
+
+
     }
 }
 
