@@ -71,10 +71,72 @@ int main()
             printf("%f\t\t%f\t\t%f\t\t%f\t\t%f\n",students[count].m1,students[count].m2,students[count].m3,students[count].percent,students[count].cgpa);
             count++;
         }
-
-
     }
 }
+        
+    else if(choice==2)
+
+    int s_id;
+    printf("\n\n======(CLASS 12 Search Menu======");
+    printf("\nEnter Student ID For Search :");
+    scanf("%d",&s_id);
+    int i=0;
+    int s=-1;
+    for(1=0;i<count;i++)
+    {
+         if(s_id==students[i].id)
+         {
+            s=i;
+            break;
+         }
+    }
+    if(s==-1)
+    {
+        printf("\n\n No Record Found !");
+    }
+    else
+    {
+    printf("\n=======Student Info======");
+    printf("\nID            :%d,students[s].id");
+    printf("\nName          :%s,students[s].name");
+    printf("\nGender        :%d,students[s].gender");
+    printf("\nAge           :%d,students[s].age");
+    printf("\n\nMarks\n");
+    printf("\nMaths\t\t\tPhysics\t\t\tChemistry\t\tPercentage\t\tCGPA\n");
+    printf("%f\t\t%f\t\t%f\t\t%f\t\t%f\n",students[s].m1,students[s].m2,students[s].m3,students[s].percent.students[s].cgpa);
+    }
+    else if(choice==3)
+
+      
+        printf("\n\n======(CLASS 12 Students List======\n");
+        for(int i=0;i<count;i++)
+        {
+            printf("\nStudent %d\n",(i+1));
+            printf("\nID            :%d,students[s].id");
+            printf("\nName          :%s,students[s].name");
+            printf("\nGender        :%d,students[s].gender");
+            printf("\nAge           :%d,students[s].age");
+            printf("\n\nMarks\n");
+            printf("\nMaths\t\t\tPhysics\t\t\tChemistry\t\tPercentage\t\tCGPA\n");
+            printf("%f\t\t%f\t\t%f\t\t%f\t\t%f\n",students[s].m1,students[s].m2,students[s].m3,students[s].percent.students[s].cgpa);
+            for(int j=0;j<110;j++)
+            {
+                printf("_");
+            }
+
+        }
+
+
+
+
+
+
+
+
+    
+
+    
+
 
 
 
