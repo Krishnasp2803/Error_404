@@ -164,6 +164,35 @@ int main()
 
 
 
+else if(choice==5)
+{
+int s_id;
+printf("\n\n=========CLASS 12 Delete Menu==========);
+printf("\n Enter Student ID for Delete);
+scanf("%d",&s_d);
+int i=0;
+int s=-1;
+for(i=0;i<count;i++);
+{
+if(s_id==student[i].d);
+ {
+s=i;
+break;
+ }
+}
+if(s==-1)
+{
+printf("\n\n No Record Found !");
+}
+elsse
+{
+if(s==count)
+{
+count--;
+}
+else if(count==6)
+{
+
 
 
 
