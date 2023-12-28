@@ -1,4 +1,4 @@
-#include<stdio.h>
+ #include<stdio.h>
 void main() 
 struct Students{
     char name[20];
@@ -136,68 +136,6 @@ int main()
     
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
