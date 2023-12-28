@@ -184,15 +184,20 @@ if(s==-1)
 {
 printf("\n\n No Record Found !");
 }
-elsse
+else
 {
 if(s==count)
 {
 count--;
 }
-else if(count==6)
+else if(count>0)
 {
-
+student[s]=student[count-1];
+count--;
+}
+printf(\n student Deleted succesfully !);
+}
+}
 
 
 
