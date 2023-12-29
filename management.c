@@ -127,6 +127,49 @@ int main()
         }
 
 
+else if(choice==4)
+{
+    int s_id;
+    printf("\n\n=======CLASS 12 Update Menu======= ");
+    printf("\n Enter Student ID For Update :");
+    scanf("%d",&s_id);
+    int i=0;
+    int s=-1;
+    for(i=0;i<count;i++)
+    {
+        if(s_id==students[i].id)
+        {
+            s=i;
+            break;
+        }
+    }
+    if(s==-1)
+    {
+        printf("\n\n No Record Found !");
+    }
+    else{
+        printf("Enter Student Name :");
+        scanf(" %[^\n]",students[s].name);
+        printf("Enter Student Gender :");
+        scanf("%s",students[s].gender);
+        printf("Enter Student Age :");
+        scanf("%d",&students[s].age);
+        printf("Enter mark(on 100) for Maths,Physics,Chemistry :");
+        scanf("%f%f%f",&students[count].m1,&students[count].m2,&students[count].m3);
+        students[count].percent = (students[count].m1+students[count].m2+students[count].m3)/3;
+        students[count].cgpa = students[count].percent/9.5;
+
+
+        printf("\nStudent Info ");
+        printf("\nID             :%d",students[s].id);
+        printf("\nName           :%s",students[s].name);
+        printf("\nGender         :%s",students[s].gender);
+        printf("\nAge            :%d",students[s].age);
+        printf("\nMaths\t\t\tPhysics\t\t\tChemistry\t\tPercentage\t\tCGPA\n");
+        printf("%f\t\t%f\t\t%f\t\t%f\t\t%f\n",students[s].m1,students[s].m2,students[s].m3,students[s].percent,students[s].cgpa);
+    }
+}
+
 
 
 
