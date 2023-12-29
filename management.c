@@ -198,9 +198,21 @@ count--;
 printf(\n student Deleted succesfully !);
 }
 }
-
-
-
+else if(choice==6)
+   {
+     print("====CLASS 12 MARK LIST=====")
+     print("\n\nNmae\t\t\tMaths\t\t\tPhysics\t\t\tChemistry\t\tPercentage\t\tCGPA\n);
+     for(int i=0;i<130;i++)
+     {
+        printt("-");
+     }
+     for(int i=0;i<count;i++)
+      {
+          printf("\n%s\t\t%f\t\t%f\t\t%f\t\t%f\t\t%f\n",students[i].name,students[i].m1,students[i].m2,students[i].m3,students[i].percent,students[i].cgpa);
+      }
+    }
+  }
+}
 
 
 
