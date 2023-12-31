@@ -202,7 +202,7 @@ int main()
         else if(choice==6)
         {
             printf("====CLASS 12 MARK LIST=====");
-            printf("\n\nNmae\t\t\tMaths\t\t\tPhysics\t\t\tChemistry\t\tPercentage\t\tCGPA\n");
+            printf("\n\nName\t\t\tMaths\t\t\tPhysics\t\t\tChemistry\t\tPercentage\t\tCGPA\n");
             for(int i=0;i<130;i++)
             {
                 printf("-");
