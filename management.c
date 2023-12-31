@@ -165,17 +165,17 @@ int main()
                 printf("%f\t\t%f\t\t%f\t\t%f\t\t%f\n",students[s].m1,students[s].m2,students[s].m3,students[s].percent,students[s].cgpa);
             }
         }  
-        else if(choice==5)
+        else if (choice==5)
         {
             int s_id;
-            printf("\n\n=========CLASS 12 Delete Menu==========");
-            printf("\n Enter Student ID for Deletetion: ");
+            printf("\n\n======CLASS 12 Delete Menu======");
+            printf("\nEnter Student ID for Deletion :");
             scanf("%d",&s_id);
             int i=0;
             int s=-1;
-            for(i=0;i<count;i++);
+            for(i=0;i<count;i++)
             {
-                if(s_id==students[i].id);
+                if(s_id==students[i].id)
                 {
                     s=i;
                     break;
@@ -183,7 +183,7 @@ int main()
             }
             if(s==-1)
             {
-                printf("\n\n No Record Found !");
+                printf("\n\nNo Record Found");
             }
             else
             {
@@ -196,7 +196,7 @@ int main()
                     students[s]=students[count-1];
                     count--;
                 }
-                printf("\n Student Deleted Succesfully !");
+                printf("\nStudent Record Deleted Successfully");
             }
         }
         else if(choice==6)
