@@ -21,12 +21,17 @@ int main()
         choice = user_choice();
         if(choice==0)
         {
-            printf("\nThank You");
+            printf("\nThank You\n");
             break;
         }
         else if(choice==1)
         {
+            int n;
             printf("\n\n======Student Insertion Menu======\n");
+            printf("\nEnter the number of students you want to add: ");
+            scanf("%d",&n);
+            for(int i=0;i<n;i++)
+            {
             do{
                 printf("Enter Student ID :");
                 scanf("%d",&students[count].id);
@@ -55,8 +60,12 @@ int main()
             scanf("%s",students[count].gender);
             printf("Enter Student Age :");
             scanf("%d",&students[count].age);
-            printf("Enter mark (on 100) for Maths,Physics and Chemistry :");
-            scanf("%f%f%f",&students[count].m1,&students[count].m2,&students[count].m3);
+            printf("Enter mark (on 100) for Maths: ");
+            scanf("%f",&students[count].m1);
+            printf("Enter mark (on 100) for Physics: ");
+            scanf("%f",&students[count].m2);
+            printf("Enter mark (on 100) for Chemistry: ");
+            scanf("%f",&students[count].m3);
             students[count].percent = (students[count].m1+students[count].m2+students[count].m3)/3;
             students[count].cgpa = students[count].percent/9.5;
 
@@ -69,6 +78,7 @@ int main()
             printf("\nMaths\t\t\tPhysics\t\t\tChemistry\t\tPercentage\t\tCGPA\n");
             printf("%f\t\t%f\t\t%f\t\t%f\t\t%f\n",students[count].m1,students[count].m2,students[count].m3,students[count].percent,students[count].cgpa);
             count++;
+            }
         }
         else if(choice==2)
         {
@@ -115,7 +125,7 @@ int main()
                 printf("\n\nMarks\n");
                 printf("\nMaths\t\t\tPhysics\t\t\tChemistry\t\tPercentage\t\tCGPA\n");
                 printf("%f\t\t%f\t\t%f\t\t%f\t\t%f\n",students[i].m1,students[i].m2,students[i].m3,students[i].percent,students[i].cgpa);
-                for(int j=0;j<110;j++)
+                for(int j=0;j<106;j++)
                 {
                     printf("_");
                 }
